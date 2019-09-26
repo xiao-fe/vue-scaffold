@@ -1,0 +1,22 @@
+// 全局公共变量
+// 主题色
+$color-primary: #409EFF;
+
+// body的背景色
+$bodyBG: #fafafa;
+
+// 主色系
+// logo可单独设置背景颜色
+$logoBG: rgb(84, 92, 100);
+
+// 主菜单导航背景色
+$menuBG: rgb(84, 92, 100);
+
+// 主色系,强颜色
+$mainStrongColor:$color-primary;
+
+// header导航高度,包含logo高度
+$headerHeight: 48px;
+
+// 侧边栏宽度
+$sideWidth: 180px;

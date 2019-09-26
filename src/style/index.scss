@@ -1,0 +1,21 @@
+@import "common-class";
+@import "common-variables";
+@import "reset";
+@import "header-nav";
+@import "side-nav";
+
+html,body {
+  width: 100%;
+  height: 100%;
+  background: $bodyBG;
+  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin: 0px;
+  font-size: 14px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+

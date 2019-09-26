@@ -1,0 +1,43 @@
+// 全局class
+// 列表元素样式
+%list-item {
+  padding: 0px 15px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.p-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1{
+  flex: 1;
+}
