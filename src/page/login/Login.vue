@@ -8,7 +8,7 @@
         <h2 class="login-form-header">用户登录</h2>
         <el-form :model="loginForm" status-icon :rules="loginRules" ref="loginForm" label-width="40px">
           <el-form-item label="账号" prop="pass">
-            <el-input type="password" v-model="loginForm.account"></el-input>
+            <el-input v-model="loginForm.userName"></el-input>
           </el-form-item>
           <el-form-item label="密码" prop="checkPass">
             <el-input type="password" v-model="loginForm.password"></el-input>
@@ -31,11 +31,11 @@
     data () {
       return {
         loginForm: {
-          account: '',
+          userName: '',
           password: ''
         },
         loginRules: {
-          account: [
+          userName: [
             { required: true, message: '请输入账号', trigger: 'blur' }
           ],
           password: [
@@ -45,18 +45,17 @@
       }
     },
     methods: {
-      userLogin(formName) {
+      userLogin (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             requestLogin(this.loginForm).then(data => {
+              console.log('data-----', data)
               setLoginUser(data.result)
-              let toPage = this.$route.query.toPage
-              if (toPage && toPage !== '/' && toPage !== '/noauth') {
-                this.$router.push(toPage)
-              } else {
-                this.$router.push('/head-menu')
-              }
-            }).catch(this.$handleError)
+              this.$router.push('/head-menu')
+            }).catch(error =>
+              // this.$handleError(error)
+              console.log(error)
+            );
           }
         });
       }

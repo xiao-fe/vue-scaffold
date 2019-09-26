@@ -3,11 +3,12 @@ import App from './App';
 import router from './router';
 import './style/index.scss';
 import store from './store';
+import Mock from './mock';
 import plugin from './assets/js/plugin';
 import allFilter from './filter/index';
 
 if (process.env.NODE_ENV === 'development') {
-  // Mock.bootstrap()
+  Mock.bootstrap()
 }
 
 // 全局方法和组件
@@ -24,7 +25,11 @@ import {
   Button,
   Select,
   Form,
-  FormItem
+  FormItem,
+  Loading,
+  MessageBox,
+  Message,
+  Notification
 } from 'element-ui';
 
 Vue.use(Menu);
@@ -35,6 +40,15 @@ Vue.use(Button);
 Vue.use(Select);
 Vue.use(Form);
 Vue.use(FormItem);
+Vue.use(Loading.directive);
+
+Vue.prototype.$loading = Loading.service;
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$notify = Notification;
+Vue.prototype.$message = Message;
 
 /* eslint-disable no-new */
 const vm = new Vue({

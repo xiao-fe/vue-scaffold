@@ -5,11 +5,9 @@ const LoginUsers = [
   {
     name: '吕某某',
     email: '24534534@qq.com',
-    password: '123456',
     userName: 'admin',
-    token: '43e3ec99-c8a3-47ec-afd7-775b7c073285',
-    pageIds: ['auth_manage', 'auth_manage_user', 'auth_manage_role', 'ab_test', 'ab_test_strategy'],
-    routerPaths: ['/auth-manage', '/auth-manage/user', '/auth-manage/role', '/ab-test', '/ab-test/strategy', '/ab-test/strategy/detail', '/ab-test/strategy-create']
+    password: '123456',
+    token: '43e3ec99-c8a3-47ec-afd7-775b7c073285'
   }
 ]
 
@@ -19,11 +17,11 @@ export default {
    */
   bootstrap (mock) {
     mockPost(mock, '登录', userAuthUrls.login, function (params) {
-      let {userName, passwd} = params
+      let {userName, password} = params;
       let user = null
       let msg = '请求成功'
       let hasUser = LoginUsers.some(u => {
-        if (u.userName !== userName || u.password !== passwd) {
+        if (u.userName !== userName || u.password !== password) {
           msg = '账号或密码错误'
           return false
         }

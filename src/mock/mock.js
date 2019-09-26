@@ -1,6 +1,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import Login from '../pages/login/mock/login';
+import Login from '../page/login/mock/login';
 
 export default {
   /**

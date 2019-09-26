@@ -39,7 +39,7 @@ export default {
    * @param msg
    */
   notifyInfo(msg) {
-    vue.$notify.info({ title: '消息', message: msg });
+    vue.$notify({ title: '消息', message: msg });
   },
 
   /**

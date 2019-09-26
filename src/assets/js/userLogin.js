@@ -74,12 +74,6 @@ export {removeTokenCookie}
  * @param user
  */
 function setLoginUser (user) {
-  user.pageIdsObj = {}
-  if (user.pageIds) {
-    user.pageIds.forEach(p => {
-      user.pageIdsObj[p] = true
-    })
-  }
   localStorage.setItem(sessionUserKey, JSON.stringify(user))
   addCookie(cookieTokenKey, user.token, 24)
 }

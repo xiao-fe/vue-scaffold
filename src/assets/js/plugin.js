@@ -65,7 +65,7 @@ export default {
      * @param error 错误信息
      */
     Vue.prototype.$handleError = error => {
-      VueGlobal.notifyError(error.message);
+      console.log(error.msg);
     };
 
     // 注册全局组件
