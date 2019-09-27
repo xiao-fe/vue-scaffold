@@ -18,19 +18,19 @@
         menuList: [
           {
             name: '菜单-1',
-            path: '/menu/1',
+            path: '/menu1',
             icon: 'el-icon-location',
             children: [
               {
-                name: '菜单-1-1', path: '/menu/1/1', icon: 'el-icon-location',
+                name: '菜单-1-1', path: '/menu/1', icon: 'el-icon-location',
               },
               {
-                name: '菜单-1-2', path: '/menu/1/2', icon: 'el-icon-location',
+                name: '菜单-1-2', path: '/menu/2', icon: 'el-icon-location',
               },
             ],
           },
           {
-            name: '菜单-2', path: '/menu/2', icon: 'el-icon-location',
+            name: '菜单-2', path: '/menu2', icon: 'el-icon-location',
           },
         ],
       };

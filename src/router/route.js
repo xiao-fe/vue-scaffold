@@ -12,11 +12,19 @@ import errorNetless from '../components/error/netless.vue';
  */
 const HeaderNav = () => import('../components/header-nav/index.vue');
 
-// 登录页面
+/**
+ * 页面模块
+ */
 const Login = () => import('../page/login/Login.vue');
 
-// 项目示例
+/**
+ * 项目示例
+ */
 const HeaderMenu = () => import('../page/project-demo/header-menu-all/index.vue');
+const Menu1_1 = () => import('../page/project-demo/header-menu-all/menu1-1.vue');
+const Menu1_2 = () => import('../page/project-demo/header-menu-all/menu1-2.vue');
+const Menu2 = () => import('../page/project-demo/header-menu-all/menu2.vue');
+const HeaderOnly = () => import('../page/project-demo/header-only/index.vue');
 
 const routes = [
   {
@@ -63,7 +71,17 @@ const routes = [
     name: 'HeaderNav',
     component: HeaderNav,
     children: [
-      {path: '/head-menu', name: 'HeaderMenu', component: HeaderMenu}
+      {
+        path: '/head-menu',
+        name: 'HeaderMenu',
+        component: HeaderMenu,
+        children: [
+          {path: '/menu/1', name: 'HeaderMenu', component: Menu1_1},
+          {path: '/menu/2', name: 'HeaderMenu', component: Menu1_2},
+          {path: '/menu2', name: 'HeaderMenu', component: Menu2}
+        ]
+      },
+      {path: 'head-only', name: 'head-only', component: HeaderOnly}
     ]
   }
 ];
