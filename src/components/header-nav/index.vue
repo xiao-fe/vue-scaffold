@@ -1,6 +1,6 @@
 <template>
   <div class="page-zone">
-    <Header :menuList="menuList"></Header>
+    <Header :menuList="menuList" :default-active="$route.matched[1]"></Header>
     <router-view></router-view>
   </div>
 </template>
@@ -18,6 +18,9 @@
           {path: '/head-only', name: '只有一级导航'}
         ]
       }
+    },
+    mounted () {
+      // console.log('header------route-----', this.$route)
     }
   }
 </script>

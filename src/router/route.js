@@ -74,6 +74,7 @@ const routes = [
       {
         path: '/head-menu',
         name: 'HeaderMenu',
+        meta: {path: '/menu/1'},
         component: HeaderMenu,
         children: [
           {path: '/menu/1', name: 'HeaderMenu', component: Menu1_1},

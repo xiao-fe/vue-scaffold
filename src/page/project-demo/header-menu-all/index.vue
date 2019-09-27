@@ -1,6 +1,6 @@
 <template>
   <div class="side-layout">
-    <SideNav :menuList="menuList" :default-active="$route.matched[2]"></SideNav>
+    <SideNav :menuList="menuList" :defaultActive="$route.meta.path ? $route.meta : $route.matched[2]"></SideNav>
     <div class="main">
       <router-view></router-view>
     </div>
@@ -35,6 +35,9 @@
         ],
       };
     },
+    mounted () {
+      console.log('route------', this.$route);
+    }
   };
 </script>
 
