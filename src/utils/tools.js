@@ -114,7 +114,6 @@ function openFullScreen () { // 开启全屏
   }
 }
 
-
 export {
   tranTime,
   debounce,

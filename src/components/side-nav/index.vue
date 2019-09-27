@@ -8,7 +8,7 @@
       :unique-opened="true"
       :router="true">
       <template v-for="(item) in menuList">
-        <el-submenu index="1" :key="item.path" v-if="item.children && item.children.length>0">
+        <el-submenu index="sub-1" :key="item.path" v-if="item.children && item.children.length>0">
           <template slot="title">
             <i :class="item.icon"></i>
             <span slot="title" :title="item.name">{{item.name}}</span>
@@ -38,11 +38,7 @@
       menuList: {
         type: Array,
         default() {
-          return [
-            {
-              name: '测试a', path: '/demo', icon: 'el-icon-location',
-            },
-          ];
+          return [];
         },
       },
       defaultActive: {

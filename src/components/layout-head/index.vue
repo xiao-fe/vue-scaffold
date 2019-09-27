@@ -25,7 +25,7 @@
       menuList: {
         type: Array,
         default() {
-          return [{ name: '测试a', path: '/demo' }];
+          return [];
         },
       },
       defaultActive: { type: Object, default() { return {}; } },
