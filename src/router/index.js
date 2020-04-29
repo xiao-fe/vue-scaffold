@@ -12,7 +12,7 @@ const router = new Router({
  * 不做权限校验的路由前缀
  * @type {[*]}
  */
-const unCheckRoutesPrefix = ['/404', '/500', '/forbid', '/lose', '/netless']
+const unCheckRoutesPrefix = ['/404', '/500', '/forbid', '/lose', '/netless', '/login', '/home']
 /**
  * 不做权限校验的路由后缀
  * @type {Array}
@@ -37,6 +37,17 @@ router.beforeEach(function (to, from, next) {
       break
     }
   }
+
+  // 登录后一定时间内无需再次登录
+  const storage = window.localStorage;
+  const djlfticket = storage.djlfticket;
+  const djlfticketsign = storage.djlfticketsign;
+  if (djlfticket && djlfticketsign) {
+    next('/home');
+  } else {
+    next(`/login?path=${to.path}`);
+  }
+
   // 校验登录用户的路由权限
   // verifyRouter({projectCode: 'bi_databus', feRouter: to.path}).then(res => {
   //   if (res.data) next()

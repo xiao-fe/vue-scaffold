@@ -40,6 +40,8 @@ axios.defaults.withCredentials = true
 // 拦截request请求
 axios.interceptors.request.use(function (config) {
   // 添加登录token或者其他公共参数
+  // config.headers['djlfticket'] = localStorage.djlfticket || '';
+  // config.headers['djlfticketsign'] = localStorage.djlfticketsign || '';
   if (config.data && config.headers['Content-Type'].includes('application/x-www-form-urlencoded')) {
     config.data = qs.stringify(config.data)
   }
