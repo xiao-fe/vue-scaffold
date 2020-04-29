@@ -15,7 +15,10 @@ const HeaderNav = () => import('../components/header-nav/index.vue');
 /**
  * 页面模块
  */
+// 登录
 const Login = () => import('../page/login/Login.vue');
+// 首页
+const Home = () => import('../page/home/index.vue');
 
 /**
  * 项目示例
@@ -59,6 +62,11 @@ const routes = [
     path: '/netless',
     name: 'netless',
     component: errorNetless,
+  },
+  {
+    path: '/home',
+    name: '首页',
+    component: Home
   },
   {
     path: '/login',
